@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Image rollover</title>
+    <script language="JavaScript">
+        function highlightdocs() {
+            if (document.images) {
+                document.images["docs"].src = docsOn.src;
+            }
+        }
+        function unhighlightdocs() {
+            if (document.images) {
+                document.images["docs"].src = docsOff.src;
+            }
+        }
+        if (document.images) {
+            docsOn = new Image();
+            docsOn.src = "photo/fluke.jpg";
+            docsOff = new Image();
+            docsOff.src = "photo/fluke.jpg";
+        }
+    </script>
+</head>
+<body>
+    <p>
+        <a href="photo/fluke.jpg" onMouseOver="highlightdocs()" onMouseOut="unhighlightdocs()">
+            <img src="fluke.jpg" name=docs height=25 width=25 border=0></a>
+    </p>
+</body>
+</html>
